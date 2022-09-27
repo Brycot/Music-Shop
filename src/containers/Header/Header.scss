@@ -1,0 +1,101 @@
+@use "../../styles/vars";
+
+.menu {
+    display: none;
+}
+
+.nav-logo {
+    cursor: pointer;
+    width: 130px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--text-input-field);
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar .navbar-left ul {
+    margin-left: 40px;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+    padding: 0px 10px;
+    font-size: var(--md);
+}
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+    padding: 0px 9px;
+    text-decoration: none;
+    color: var(--hospital--green);
+    border: 1px solid var(--hospital--green);
+    border-radius: 5px;
+}
+
+.navbar-email {
+    display: flex;
+    width: auto;
+    flex-wrap: nowrap;
+    color: var(--very-light-pink);
+    font-size: var(--md);
+    margin-right: 12px;
+}
+.navbar-email:hover,
+.navbar-shopping-car:hover {
+    cursor: pointer;
+}
+
+.navbar-email img {
+    margin-left: 10px;
+    transform: rotate(90deg);
+}
+
+.navbar-shopping-car div {
+    width: 16px;
+    height: 16px;
+    background-color: var(--hospital--green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    position: absolute;
+    top: -4px;
+    right: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-shopping-car {
+    position: relative;
+}
+
+@media (max-width: 640px) {
+    .menu {
+        display: block;
+    }
+    .navbar-left ul {
+        display: none;
+    }
+    .navbar-email {
+        display: none;
+    }
+}

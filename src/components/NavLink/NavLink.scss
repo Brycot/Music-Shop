@@ -1,0 +1,17 @@
+@use '../../styles/vars';
+
+li a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+    padding: 0px 10px;
+    font-size: var(--md);
+}
+
+li a:hover {
+    padding: 0px 9px;
+    text-decoration: none;
+    color: var(--hospital--green);
+    border: 1px solid var(--hospital--green);
+    border-radius: 5px;
+    cursor: pointer;
+}

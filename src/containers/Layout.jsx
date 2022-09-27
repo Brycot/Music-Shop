@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React, { children } from 'react'
 
 function Layout({ children }) {
   return (
