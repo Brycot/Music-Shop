@@ -3,6 +3,7 @@ import "./EmailSend.scss";
 import logo from "@logos/logo_yard_sale.png";
 import iconEmail from "@icons/email.png";
 import Button from "../../components/Button/Button";
+import ResendButton from "../../components/ResendButton/ResendButton";
 
 function EmailSend() {
     return (
@@ -21,10 +22,7 @@ function EmailSend() {
                     type={"primary-button login-button"}
                     textButton={"Login"}
                 />
-                <p className="resend">
-                    <span>Didn't receive the email?</span>
-                    <a href="/">Resend</a>
-                </p>
+                <ResendButton/>
             </div>
         </div>
     );
