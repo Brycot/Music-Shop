@@ -1,0 +1,36 @@
+@use "../../styles/vars";
+
+.orderItem {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.orderItem p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderItem p span:nth-child(1) {
+    font-size: var(--md);
+    color: var(--very-light-pink);
+    font-weight: bold;
+}
+
+.orderItem p span:nth-child(2) {
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+    font-weight: 500;
+}
+
+.orderItem p:nth-child(2) {
+    text-align: end;
+    font-weight: bold;
+    color: var(--very-light-pink);
+}
+
+.orderItem img {
+    width: 8px;
+}
