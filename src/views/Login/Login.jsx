@@ -1,7 +1,8 @@
 import React from "react";
-import Button from "../../components/Button/Button";
+import Button from "@components/Button/Button";
 import "./Login.scss";
 import logo from "@logos/logo_yard_sale.png";
+
 function Login() {
     return (
         <div className="login">
