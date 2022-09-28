@@ -17,19 +17,11 @@ function RoutesMusic() {
             <Layout>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
-                    <Route
-                        exact
-                        path="/new-password"
-                        element={<NewPassWord />}
-                    />
+                    <Route exact path="/new-password" element={<NewPassWord />} />
                     <Route exact path="/email-send" element={<EmailSend />} />
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/my-account" element={<MyAccount />} />
-                    <Route
-                        exact
-                        path="/create-account"
-                        element={<CreateAccount />}
-                    />
+                    <Route exact path="/singup" element={<CreateAccount />} />
                     <Route exact path="*" element={<NotFound />} />
                 </Routes>
             </Layout>
