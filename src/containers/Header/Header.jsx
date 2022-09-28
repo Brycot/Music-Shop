@@ -6,6 +6,7 @@ import Arrow from "@icons/flechita.svg";
 import IconShoppingCart from "../../components/IconShoppingCart/IconShoppingCart";
 import NavLink from "../../components/NavLink/NavLink";
 import { categories } from '@utils/categories'
+import DesktopMenu from "../DesktopMenu/DesktopMenu";
 function Header() {
     return (
         <nav className="navbar">
@@ -22,7 +23,7 @@ function Header() {
                 <ul>
                     <li className="navbar-email">
                         pepe@example.com
-                        <img src={Arrow} alt="flecha" />
+                        <img onClick={() => console.log('feewf')} src={Arrow} alt="flecha" />
                     </li>
                     <li className="navbar-shopping-car">
                         <IconShoppingCart />

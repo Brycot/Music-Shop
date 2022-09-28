@@ -12,6 +12,7 @@ import MyAccount from "@views/MyAccount/MyAccount";
 import CreateAccount from "@views/CreateAccount/CreateAccount";
 import ShoppingCart from "../containers/ShoppingCart/ShoppingCart";
 import EditAccount from "../views/EditAccount/EditAccount";
+import DesktopMenu from "../containers/DesktopMenu/DesktopMenu";
 
 function RoutesMusic() {
     return (
@@ -35,6 +36,7 @@ function RoutesMusic() {
                     <Route exact path="/edit-account" element={<EditAccount />} />
                     <Route exact path="/singup" element={<CreateAccount />} />
                     <Route exact path="/shopping-cart" element={<ShoppingCart />} />
+                    <Route exact path="/prueba" element={<DesktopMenu />} />
                     <Route exact path="*" element={<NotFound />} />
                 </Routes>
             </Layout>

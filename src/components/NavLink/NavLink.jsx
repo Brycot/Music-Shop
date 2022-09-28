@@ -3,7 +3,7 @@ import './NavLink.scss'
 
 function NavLink({onClick, Text }) {
     return (
-        <li>
+        <li className='NavLink'>
             <a href={onClick}>{Text}</a>
         </li>
     );

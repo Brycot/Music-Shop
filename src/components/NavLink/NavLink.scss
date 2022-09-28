@@ -1,13 +1,13 @@
 @use '../../styles/vars';
 
-li a {
+.NavLink a {
     text-decoration: none;
     color: var(--very-light-pink);
     padding: 0px 10px;
     font-size: var(--md);
 }
 
-li a:hover {
+.NavLink a:hover {
     padding: 0px 9px;
     text-decoration: none;
     color: var(--hospital--green);

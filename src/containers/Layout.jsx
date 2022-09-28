@@ -3,7 +3,7 @@ import Header from '@containers/Header/Header';
 function Layout({ children }) {
   return (
     <div className='Layout'>
-        {/* <Header /> */}
+        <Header />
         {children}
     </div>
   )
