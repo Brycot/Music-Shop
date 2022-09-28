@@ -1,0 +1,14 @@
+@use '../../styles/vars';
+
+.resend {
+    font-size: var(--sm);
+}
+
+.resend span {
+    color: var(--very-light-pink);
+}
+
+.resend a {
+    color: var(--hospital--green);
+    text-decoration: none;
+}
