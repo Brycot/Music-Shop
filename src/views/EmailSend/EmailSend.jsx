@@ -7,10 +7,10 @@ import ResendButton from "../../components/ResendButton/ResendButton";
 
 function EmailSend() {
     return (
-        <div className="login">
-            <div className="form-container">
+        <div className="email-send">
+            <div className="email-send-form-container">
                 <img src={logo} alt="logo" className="logo" />
-                <h1 className="title">Email has ben sent</h1>
+                <h1 className="email-send-title">Email has ben sent</h1>
                 <p className="subtitle">
                     Please check your inbox for instructions <br />
                     on how to reset the password
@@ -22,7 +22,7 @@ function EmailSend() {
                     type={"primary-button login-button"}
                     textButton={"Login"}
                 />
-                <ResendButton/>
+                <ResendButton />
             </div>
         </div>
     );

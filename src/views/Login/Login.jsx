@@ -6,7 +6,7 @@ import logo from "@logos/logo_yard_sale.png";
 function Login() {
     return (
         <div className="login">
-            <div className="form-container">
+            <div className="login-form-container">
                 <img src={logo} alt="logo" className="logo" />
                 <form action="/" className="form">
                     <label htmlFor="email" className="label">

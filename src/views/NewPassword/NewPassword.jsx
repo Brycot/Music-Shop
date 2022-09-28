@@ -10,8 +10,8 @@ function NewPassword() {
     }
 
     return (
-        <div className="login">
-            <div className="form-container">
+        <div className="newPassword">
+            <div className="newPassword-form-container">
                 <img src={logo} alt="logo" className="logo" />
                 <h1 className="title">Create a new password</h1>
                 <p className="subtitle">Enter a new password for you account</p>
