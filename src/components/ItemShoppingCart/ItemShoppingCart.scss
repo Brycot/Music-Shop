@@ -32,3 +32,33 @@
 .IconClose {
     cursor: pointer;
 }
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.shopping-cart figure {
+    margin: 0;
+}
+
+.shopping-cart figure img {
+    object-fit: cover;
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
+}
+
+.shopping-cart p:nth-child(2) {
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+}
+
+.shopping-cart p:nth-child(3) {
+    color: var(--very-light-pink);
+    font-size: var(--md);
+    font-weight: bold;
+}

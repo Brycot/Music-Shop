@@ -10,15 +10,15 @@ function ShoppingCart() {
                 <img src="/assets/img/icons/flechita.svg" alt="arrow" />
                 <p className="tittle">Shopping cart</p>
             </div>
-            <div className="my-order-content">
-                <ItemShoppingCart />
+            <div className="ShoppingCart-content">
+                <ItemShoppingCart OrderItem={false} />
             </div>
-                <div className="order">
-                    <p>
-                        <span>TOTAL:</span>
-                    </p>
-                    <p>$1353.00</p>
-                </div>
+            <div className="order">
+                <p>
+                    <span>TOTAL:</span>
+                </p>
+                <p>$1353.00</p>
+            </div>
             <Button
                 typeButton={"button"}
                 textButton={"PURCHASE"}

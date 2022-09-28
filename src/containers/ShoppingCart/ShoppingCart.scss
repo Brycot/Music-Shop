@@ -9,7 +9,7 @@
     border-radius: 20px;
     box-shadow: 0px 0px 11px 2px var(--black);
 }
-.my-order-content {
+.ShoppingCart-content {
     max-height: 340px;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -73,8 +73,9 @@
         border: 0;
         box-shadow: none;
     }
-    .my-order-content {
-        height: 600px;
+    .ShoppingCart-content {
+        height: 400px;
+        max-height: 400px;
         padding-right: 10px;
     }
     .purchase-button {
