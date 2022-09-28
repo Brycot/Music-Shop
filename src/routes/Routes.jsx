@@ -15,6 +15,7 @@ import EditAccount from "../views/EditAccount/EditAccount";
 import DesktopMenu from "../containers/DesktopMenu/DesktopMenu";
 import Orders from "../views/Orders/Orders";
 import Order from "../views/Order/Order";
+import MobileMenu from "../containers/MobileMenu/MobileMenu";
 
 function RoutesMusic() {
     return (
@@ -40,7 +41,7 @@ function RoutesMusic() {
                     <Route exact path="/orders" element={<Orders />} />
                     <Route exact path="/orders/:code" element={<Order />} />
                     <Route exact path="/shopping-cart" element={<ShoppingCart />} />
-                    <Route exact path="/prueba" element={<ShoppingCart />} />
+                    <Route exact path="/prueba" element={<MobileMenu />} />
                     <Route exact path="*" element={<NotFound />} />
                 </Routes>
             </Layout>

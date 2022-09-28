@@ -3,19 +3,19 @@ categories.push({
     text: "All",
 })
 categories.push({
-    text: "Microphone",
+    text: "Microphones",
 });
 categories.push({
-    text: "Headphone",
+    text: "Headphones",
 });
 categories.push({
-    text: "Interface",
+    text: "Interfaces",
 });
 categories.push({
-    text: "Monitor",
+    text: "Monitors",
 });
 categories.push({
-    text: "Controller",
+    text: "Controllers",
 });
 
 export { categories };
