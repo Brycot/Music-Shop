@@ -7,6 +7,7 @@ import NewPassWord from "../views/NewPassword/NewPassword";
 import Home from "../views/Home/Home";
 import NotFound from "../views/NotFound/NotFound";
 import EmailSend from "../views/EmailSend/EmailSend";
+import Login from "../views/Login/Login";
 
 function RoutesMusic() {
     return (
@@ -23,6 +24,11 @@ function RoutesMusic() {
                         exact
                         path="/email-send"
                         element={<EmailSend />}
+                    />
+                    <Route
+                        exact
+                        path="/login"
+                        element={<Login />}
                     />
                     <Route exact path="*" element={<NotFound />} />
                 </Routes>
