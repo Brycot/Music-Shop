@@ -2,6 +2,7 @@ import React from "react";
 import "./EmailSend.scss";
 import logo from "@logos/logo_yard_sale.png";
 import iconEmail from "@icons/email.png";
+import Button from "../../components/Button/Button";
 
 function EmailSend() {
     return (
@@ -16,7 +17,10 @@ function EmailSend() {
                 <div className="email-image">
                     <img src={iconEmail} alt="email" />
                 </div>
-                <button className="primary-button login-button">Login</button>
+                <Button
+                    type={"primary-button login-button"}
+                    textButton={"Login"}
+                />
                 <p className="resend">
                     <span>Didn't receive the email?</span>
                     <a href="/">Resend</a>

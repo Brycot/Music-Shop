@@ -13,8 +13,8 @@ function Header() {
             <div className="navbar-left">
                 <img src={Logo} alt="logo" className="nav-logo" />
                 <ul>
-                    {categories.map((categorie) => (
-                        <NavLink Text={categorie.text} />
+                    {categories.map((category) => (
+                        <NavLink key={category.text} Text={category.text} />
                     ))}
                 </ul>
             </div>
