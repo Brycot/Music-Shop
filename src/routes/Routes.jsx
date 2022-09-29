@@ -17,49 +17,63 @@ import Orders from "../views/Orders/Orders";
 import Order from "../views/Order/Order";
 import MobileMenu from "../containers/MobileMenu/MobileMenu";
 import ProductDetail from "../views/ProductDetail/ProductDetail";
+import AppContext from "../utils/context/AppContext";
+import useInitialState from "../utils/hooks/useInitialState";
 
 function RoutesMusic() {
+    const initialState = useInitialState();
+
     return (
-        <HashRouter>
-            <Layout>
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route
-                        exact
-                        path="/new-password"
-                        element={<NewPassWord />}
-                    />
-                    <Route
-                        exact
-                        path="/recovery-password"
-                        element={<RecoveryPassword />}
-                    />
-                    <Route exact path="/email-send" element={<EmailSend />} />
-                    <Route exact path="/login" element={<Login />} />
-                    <Route exact path="/account" element={<MyAccount />} />
-                    <Route
-                        exact
-                        path="/edit-account"
-                        element={<EditAccount />}
-                    />
-                    <Route exact path="/singup" element={<CreateAccount />} />
-                    <Route exact path="/orders" element={<Orders />} />
-                    <Route exact path="/orders/:code" element={<Order />} />
-                    <Route
-                        exact
-                        path="/shopping-cart"
-                        element={<ShoppingCart />}
-                    />
-                    <Route
-                        exact
-                        path="/product/:slug"
-                        element={<ProductDetail />}
-                    />
-                    <Route exact path="/prueba" element={<MobileMenu />} />
-                    <Route exact path="*" element={<NotFound />} />
-                </Routes>
-            </Layout>
-        </HashRouter>
+        <AppContext.Provider value={initialState}>
+            <HashRouter>
+                <Layout>
+                    <Routes>
+                        <Route exact path="/" element={<Home />} />
+                        <Route
+                            exact
+                            path="/new-password"
+                            element={<NewPassWord />}
+                        />
+                        <Route
+                            exact
+                            path="/recovery-password"
+                            element={<RecoveryPassword />}
+                        />
+                        <Route
+                            exact
+                            path="/email-send"
+                            element={<EmailSend />}
+                        />
+                        <Route exact path="/login" element={<Login />} />
+                        <Route exact path="/account" element={<MyAccount />} />
+                        <Route
+                            exact
+                            path="/edit-account"
+                            element={<EditAccount />}
+                        />
+                        <Route
+                            exact
+                            path="/singup"
+                            element={<CreateAccount />}
+                        />
+                        <Route exact path="/orders" element={<Orders />} />
+                        <Route exact path="/orders/:code" element={<Order />} />
+                        <Route
+                            exact
+                            path="/shopping-cart"
+                            element={<ShoppingCart />}
+                        />
+                        <Route
+                            exact
+                            path="/product/:slug"
+                            element={<ProductDetail />}
+                        />
+                        <Route exact path="/prueba" element={<MobileMenu />} />
+                        <Route exact path="*" element={<NotFound />} />
+                    </Routes>
+                </Layout>
+            </HashRouter>
+        </AppContext.Provider>
     );
 }
 

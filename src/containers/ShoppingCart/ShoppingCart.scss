@@ -4,10 +4,13 @@
     width: 360px;
     padding: 24px;
     box-sizing: border-box;
-    position: absolute;
-    right: 0;
     border-radius: 20px;
     box-shadow: 0px 0px 11px 2px var(--black);
+    background-color: var(--background);
+    position: absolute;
+    top: 61px;
+    right: 5px;
+    z-index: 3;
 }
 .ShoppingCart-content {
     max-height: 340px;
@@ -82,3 +85,4 @@
         justify-content: flex-end;
     }
 }
+

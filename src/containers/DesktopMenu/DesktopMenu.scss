@@ -7,6 +7,11 @@
     border-radius: 20px;
     padding: 20px 20px 0 20px;
     box-shadow: 0px 0px 11px 2px var(--black);
+    background-color: var(--background);
+    position: absolute;
+    top: 61px;
+    right: 50px;
+    z-index: 3;
 }
 
 .desktop-menu__ul {

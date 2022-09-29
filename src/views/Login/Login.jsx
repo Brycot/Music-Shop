@@ -4,17 +4,30 @@ import "./Login.scss";
 import logo from "@logos/logo_yard_sale.png";
 
 function Login() {
+    const form = React.useRef(null);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(form.current);
+        const data = {
+            username: formData.get("email"),
+            password: formData.get("password"),
+        };
+        console.log(data);
+    };
+
     return (
         <div className="login">
             <div className="login-form-container">
                 <img src={logo} alt="logo" className="logo" />
-                <form action="/" className="form">
+                <form action="/" className="form" ref={form}>
                     <label htmlFor="email" className="label">
                         Email Address
                     </label>
                     <input
                         type="text"
                         id="email"
+                        name="email"
                         placeholder="example@email.com"
                         className="input input-email"
                     />
@@ -24,6 +37,7 @@ function Login() {
                     <input
                         type="password"
                         id="password"
+                        name="password"
                         placeholder="*********"
                         className="input input-password"
                     />
@@ -31,6 +45,7 @@ function Login() {
                         typeButton={"submit"}
                         textButton={"Log In"}
                         type={"primary-button login-button"}
+                        onClick={handleSubmit}
                     />
                     <a href="/">Forgot my password</a>
                 </form>

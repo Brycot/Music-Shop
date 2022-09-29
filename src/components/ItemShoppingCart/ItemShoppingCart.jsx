@@ -1,20 +1,27 @@
-import React from "react";
-import IconClose from '@icons/icon_close.png';
-import './ItemShoppingCart.scss';
+import React, { useContext } from "react";
+import IconClose from "@icons/icon_close.png";
+import AppContext from "../../utils/context/AppContext";
+import "./ItemShoppingCart.scss";
 
-function ItemShoppingCart({ OrderItem }) {
+function ItemShoppingCart({ OrderItem, product, indexValue }) {
+    const { removeFromCart } = useContext(AppContext);
+    const handdleRemove = index => {
+        removeFromCart(index);
+    }
     return (
         <div className={"shopping-cart"}>
             <figure>
-                <img
-                    src="https://cdn11.bigcommerce.com/s-oj8ea26qyc/images/stencil/1280x1280/products/867/5172/i97d1ruynsz8jgoncto0__29966.1602512396.jpg?c=1"
-                    alt="Microphone"
-                />
+                <img src={product.images[0]} alt={product.title} />
             </figure>
-            <p>Shure SM7B</p>
-            <p>$475.00</p>
+            <p>{product.title}</p>
+            <p>${product.price}</p>
             {!OrderItem && (
-                <img className="IconClose" src={IconClose} alt="X" />
+                <img
+                    className="IconClose"
+                    onClick={() => handdleRemove(indexValue)}
+                    src={IconClose}
+                    alt="X"
+                />
             )}
         </div>
     );
