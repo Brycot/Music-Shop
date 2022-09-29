@@ -12,6 +12,17 @@ function ShoppingCart() {
             </div>
             <div className="ShoppingCart-content">
                 <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
+                <ItemShoppingCart OrderItem={false} />
             </div>
             <div className="order">
                 <p>

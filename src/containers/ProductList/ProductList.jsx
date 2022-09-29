@@ -7,6 +7,19 @@ function ProductList() {
         <section className="main-container">
             <div className="productList">
                 <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
+                <ProductItem/>
             </div>
         </section>
     );

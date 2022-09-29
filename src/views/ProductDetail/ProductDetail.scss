@@ -1,0 +1,31 @@
+@use "../../styles/vars";
+
+.product-detail-complete {
+    position: relative;
+    width: 360px;
+    padding-bottom: 24px;
+}
+
+.product-detail-close {
+    position: absolute;
+    z-index: 2;
+    padding: 12px;
+    top: 12px;
+    left: 12px;
+}
+
+.product-detail-close:hover {
+    cursor: pointer;
+}
+
+.add-to-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .product-detail-complete {
+        width: 100%;
+    }
+}
