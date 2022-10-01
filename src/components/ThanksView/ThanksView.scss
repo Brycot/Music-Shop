@@ -1,0 +1,15 @@
+@use "../../styles/vars";
+
+.thanks {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks h3, 
+.thanks h4 {
+    color: var(--very-light-pink);
+}

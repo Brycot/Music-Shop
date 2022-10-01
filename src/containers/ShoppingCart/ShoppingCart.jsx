@@ -1,16 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ItemShoppingCart from "@components/ItemShoppingCart/ItemShoppingCart";
 import Button from "@components/Button/Button";
 import AppContext from "../../utils/context/AppContext";
 import "./ShoppingCart.scss";
+import ThanksView from "../../components/ThanksView/ThanksView";
 
 function ShoppingCart() {
-    const { state } = useContext(AppContext);
+    const navigate = useNavigate();
+    const { ShoppingCart, onPurchase } = useContext(AppContext);
+    const [purchased, setPurchased] = useState(false)
     const sumTotal = () => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
-        const sum = state.cart.reduce(reducer, 0);
+        const sum = ShoppingCart.reduce(reducer, 0);
         return sum;
     }
+    const handlePurchase = () => {
+        if(ShoppingCart.length === 0) {
+            console.log("carrito vacio");
+            return null;
+        }
+        onPurchase();
+        setPurchased(true);
+        console.log('gracias por comprar');
+        navigate('/orders');
+        setTimeout(() => {
+        setPurchased(false);
+        }, 3000);
+    };
+    
     return (
         <aside className="ShoppingCart">
             <div className="title-container">
@@ -18,7 +36,7 @@ function ShoppingCart() {
                 <p className="tittle">Shopping cart</p>
             </div>
             <div className="ShoppingCart-content">
-                {state.cart.map((product, index) => (
+                {ShoppingCart.map((product, index) => (
                     <ItemShoppingCart
                         indexValue={index}
                         key={index}
@@ -26,6 +44,7 @@ function ShoppingCart() {
                         OrderItem={false}
                     />
                 ))}
+                {purchased && <ThanksView />}
             </div>
             <div className="order">
                 <p>
@@ -35,8 +54,9 @@ function ShoppingCart() {
             </div>
             <Button
                 typeButton={"button"}
-                textButton={"PURCHASE"}
+                textButton={!purchased ? "PURCHASE" : "THANKS"}
                 type={"purchase-button"}
+                onClick={() => handlePurchase()}
             />
         </aside>
     );
