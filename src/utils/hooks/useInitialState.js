@@ -37,23 +37,44 @@ const useInitialState = () => {
         const newCart = [...ShoppingCart];
         newCart.splice(productIndex, 1);
         saveShoppingCart(newCart);
-    }
+    };
 
     const onPurchase = () => {
+        const date = orderDate();
+        const id = newOrderID(orders);
         const purchase = [...ShoppingCart];
         const emptyCart = [];
         const newOrder = [...orders];
-        newOrder.push(purchase);
+        newOrder.push({
+            buy: purchase,
+            date: date,
+            id: id,
+        });
         saveOrder(newOrder);
         saveShoppingCart(emptyCart);
-    }
+    };
     return {
         ShoppingCart,
+        orders,
         addToCart,
         removeFromCart,
         onPurchase,
     };
 };
-
+function newOrderID(orderList) {
+    if (!orderList.length) {
+        return 1;
+    }
+    const idList = orderList.map((order) => order.id);
+    const idMax = Math.max(...idList);
+    return idMax + 1;
+}
+function orderDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+    const actualDate = `${day}-${month}-${year}`;
+    return actualDate;
+}
 export default useInitialState;
-
