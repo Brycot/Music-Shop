@@ -8,6 +8,7 @@ import NavLink from "../../components/NavLink/NavLink";
 import { categories } from "@utils/categories";
 import DesktopMenu from "../DesktopMenu/DesktopMenu";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [toggle, setToggle] = useState(false);
@@ -22,7 +23,9 @@ function Header() {
         <nav className="navbar">
             <img src={Icon} alt="menu" className="menu" />
             <div className="navbar-left">
-                <img src={Logo} alt="logo" className="nav-logo" />
+                <Link to={'/'} className="nav-logo-navlink">
+                    <img src={Logo} alt="logo" className="nav-logo" />
+                </Link>
                 <ul>
                     {categories.map((category) => (
                         <NavLink key={category.text} Text={category.text} />

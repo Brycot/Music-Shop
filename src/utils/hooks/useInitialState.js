@@ -59,6 +59,7 @@ const useInitialState = () => {
         addToCart,
         removeFromCart,
         onPurchase,
+        loadingOrder,
     };
 };
 function newOrderID(orderList) {

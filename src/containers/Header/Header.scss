@@ -3,7 +3,12 @@
 .menu {
     display: none;
 }
-
+.nav-logo-navlink {
+    width: 130px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
 .nav-logo {
     cursor: pointer;
     width: 130px;
@@ -22,6 +27,7 @@ nav {
 
 .navbar-left {
     display: flex;
+    
 }
 
 .navbar .navbar-left ul {
