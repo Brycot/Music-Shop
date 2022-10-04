@@ -8,7 +8,7 @@
         "start": "webpack serve --open",
         "build": "webpack --mode production",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist"
+        "deploy": "gh-pages -d build"
     },
     "keywords": [
         "react",
@@ -41,5 +41,5 @@
         "sass-loader": "^13.0.2",
         "style-loader": "^3.3.1"
     },
-    "homepage": "https://brycot.github.io/Music-Shop"
+    "homepage": "https://brycot.github.io/music-shop"
 }
