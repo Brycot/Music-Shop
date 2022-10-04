@@ -23,7 +23,7 @@ function RoutesMusic() {
 
     return (
         <AppContext.Provider value={initialState}>
-            <HashRouter basename="/music-shop">
+            <HashRouter>
                 <Layout>
                     <Routes>
                         <Route exact path="/" element={<Home />}>
