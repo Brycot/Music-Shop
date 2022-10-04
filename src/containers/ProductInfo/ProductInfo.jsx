@@ -1,31 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import AppContext from "../../utils/context/AppContext";
 import "./ProductInfo.scss";
 
-function ProductInfo() {
+function ProductInfo({ product, active }) {
+    const navigate = useNavigate();
+    const { addToCart } = useContext(AppContext);
+    const handdleClick = (item) => {
+        addToCart(item);
+        navigate("/");
+    };
     return (
         <>
             <div className="degradado" />
             <img
                 className="image-product-detail"
-                src="https://media.uaudio.com/assetlibrary/a/p/apollo_solo_og.jpg"
+                src={product.images[0]}
                 alt="apolloSolo"
             />
             <div className="product-info">
-                <p>$120,00</p>
-                <p>Apollo Solo</p>
-                <p>
-                    Apollo Solo is the world’s finest Thunderbolt 3-powered
-                    desktop recording audio interface for Mac and Windows —
-                    delivering class‑leading audio conversion, two Unison™ mic
-                    preamps, and a suite of onboard UAD plug-ins for recording
-                    album‑quality results, in real time.
-                </p>
+                <p>${product.price}</p>
+                <p>{product.title}</p>
+                <p>{product.info}</p>
                 <Button
                     typeButton={"button"}
                     textButton={"ADD TO CART"}
                     type={"purchase-button add-to-cart-button"}
                     iconCart
+                    onClick={() => handdleClick(product)}
                 />
             </div>
         </>

@@ -17,7 +17,7 @@ const useInitialState = () => {
         loading,
         error,
     } = useLocalStorage("ShoppingCart", []);
-
+    
     const deleteTodo = (id) => {
         const todoIndex = todos.findIndex((todo) => todo.id === id);
         const newTodos = [...todos];

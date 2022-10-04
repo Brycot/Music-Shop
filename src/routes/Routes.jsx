@@ -12,10 +12,8 @@ import MyAccount from "@views/MyAccount/MyAccount";
 import CreateAccount from "@views/CreateAccount/CreateAccount";
 import ShoppingCart from "../containers/ShoppingCart/ShoppingCart";
 import EditAccount from "../views/EditAccount/EditAccount";
-import DesktopMenu from "../containers/DesktopMenu/DesktopMenu";
 import Orders from "../views/Orders/Orders";
 import Order from "../views/Order/Order";
-import MobileMenu from "../containers/MobileMenu/MobileMenu";
 import ProductDetail from "../views/ProductDetail/ProductDetail";
 import AppContext from "../utils/context/AppContext";
 import useInitialState from "../utils/hooks/useInitialState";
@@ -25,10 +23,17 @@ function RoutesMusic() {
 
     return (
         <AppContext.Provider value={initialState}>
-            <HashRouter>
+            <HashRouter basename="/music-shop">
                 <Layout>
                     <Routes>
-                        <Route exact path="/" element={<Home />} />
+                        <Route exact path="/" element={<Home />}>
+                            <Route
+                                exact
+                                path="/product/:productID"
+                                element={<ProductDetail />}
+                            />
+                        </Route>
+
                         <Route
                             exact
                             path="/new-password"
@@ -63,12 +68,7 @@ function RoutesMusic() {
                             path="/shopping-cart"
                             element={<ShoppingCart />}
                         />
-                        <Route
-                            exact
-                            path="/product/:slug"
-                            element={<ProductDetail />}
-                        />
-                        <Route exact path="/prueba" element={<MobileMenu />} />
+
                         <Route exact path="*" element={<NotFound />} />
                     </Routes>
                 </Layout>

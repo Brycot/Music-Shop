@@ -1,10 +1,17 @@
-import React from 'react'
-import './NavLink.scss'
+import React from 'react';
+import useGetProducts from "../../utils/hooks/useGetProducts";
+import './NavLink.scss';
 
-function NavLink({onClick, Text }) {
+function NavLink({ Text }) {
+    const { setFilterValue } = useGetProducts();
+
+    const handleMenu = (payload) => {
+        setFilterValue(payload);
+        console.log(payload);
+    };
     return (
-        <li className='NavLink'>
-            <a href={onClick}>{Text}</a>
+        <li onClick={() => handleMenu(Text.toLowerCase())} className="NavLink">
+            <p>{Text}</p>
         </li>
     );
 }

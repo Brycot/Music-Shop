@@ -7,23 +7,34 @@ import IconShoppingCart from "../../components/IconShoppingCart/IconShoppingCart
 import NavLink from "../../components/NavLink/NavLink";
 import { categories } from "@utils/categories";
 import DesktopMenu from "../DesktopMenu/DesktopMenu";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { Link } from "react-router-dom";
 
 function Header() {
     const [toggle, setToggle] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
+    const [toggleMobile, setToggleMobile] = useState(false);
     const handleToggle = () => {
         setToggle(!toggle);
     };
     const handleToggleShoppingCart = () => {
         setToggleOrders(!toggleOrders);
     };
+    const handleToggleMobileMenu = () => {
+        setToggleMobile(!toggleMobile);
+    };
+    
     return (
         <nav className="navbar">
-            <img src={Icon} alt="menu" className="menu" />
+            <img
+                onClick={() => handleToggleMobileMenu()}
+                src={Icon}
+                alt="menu"
+                className="menu"
+            />
             <div className="navbar-left">
-                <Link to={'/'} className="nav-logo-navlink">
+                <Link to={"/"} className="nav-logo-navlink">
                     <img src={Logo} alt="logo" className="nav-logo" />
                 </Link>
                 <ul>
@@ -52,6 +63,7 @@ function Header() {
             </div>
             {toggle && <DesktopMenu />}
             {toggleOrders && <ShoppingCart />}
+            {toggleMobile && <MobileMenu />}
         </nav>
     );
 }

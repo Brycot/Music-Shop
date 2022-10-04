@@ -3,11 +3,8 @@ import ProductItem from "@components/ProductItem/ProductItem";
 import "./ProductList.scss";
 import useGetProducts from "../../utils/hooks/useGetProducts";
 
-const API = "https://api.escuelajs.co/api/v1/products";
-// const API = "../../utils/products.json";
-
 function ProductList() {
-    const products = useGetProducts(API);
+    const {products} = useGetProducts();
     return (
         <section className="main-container">
             <div className="productList">
