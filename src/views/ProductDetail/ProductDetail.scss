@@ -49,13 +49,25 @@
 }
 
 @media (max-width: 640px) {
+    .product-detail-container {
+        background-color: transparent;
+    }
+    .product-detail {
+        width: 100%;
+        height: 93vh;
+        border-radius: 0px;
+        transform-origin: bottom;
+        transform: translateY(100%);
+        transition: all 0.15s ease-in-out;
+    }
     .product-detail-complete {
         width: 100%;
         height: 93vh;
         border-radius: 0px;
-        animation: up 0.25s ease-in-out;
         transform-origin: bottom;
-        transition: all 300ms ease-in-out;
+        animation: up 0.3s ease;
+        // transform: translateY(0);
+        transition: all 0.3s ease-in-out;
     }
 }
 

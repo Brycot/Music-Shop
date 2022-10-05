@@ -1,26 +1,38 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import ProductInfo from "../../containers/ProductInfo/ProductInfo";
 import productsData from "../../utils/products";
+import AppContext from "../../utils/context/AppContext";
 import "./ProductDetail.scss";
 
 function ProductDetail() {
+    const navigate = useNavigate();
     const { productID } = useParams();
+    const { productInfoView, setProductInfoView } = useContext(AppContext);
     const product = productsData.find((item) => item.id == productID);
+    const handleClose = () => {
+        setProductInfoView(false);
+        setTimeout(() => {
+            navigate("/");
+        }, 150);
+    };
+
     return (
-        <div
-            className={`product-detail-container`}
-        >
-            <section className="product-detail-complete">
+        <div className={`product-detail-container`}>
+            <section
+                className={`${
+                    productInfoView
+                        ? "product-detail-complete"
+                        : "product-detail"
+                }`}
+            >
                 <div className="product-detail-close">
-                    <Link to={"/"}>
-                        <div className="icon-close">
-                            <img
-                                src="/assets/img/icons/icon_close.png"
-                                alt="close"
-                            />
-                        </div>
-                    </Link>
+                    <div onClick={handleClose} className="icon-close">
+                        <img
+                            src="/assets/img/icons/icon_close.png"
+                            alt="close"
+                        />
+                    </div>
                 </div>
                 <ProductInfo product={product} />
             </section>

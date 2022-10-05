@@ -3,9 +3,9 @@ import './MobileMenu.scss';
 import { categories } from '@utils/categories';
 import NavLink from "../../components/NavLink/NavLink";
 
-function MobileMenu() {
+function MobileMenu({ toggleMobile }) {
     return (
-        <div className="mobile-menu">
+        <div className={`${toggleMobile ? "mobile-menu-open" : "mobile-menu"}`}>
             <ul>
                 {categories.map((category) => (
                     <NavLink key={category.text} Text={category.text} />

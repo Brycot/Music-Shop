@@ -2,6 +2,7 @@ import { useState } from "react";
 import useLocalStorage from "../../utils/hooks/useLocalStorage";
 
 const useInitialState = () => {
+    const [productInfoView, setProductInfoView] = useState(false);
     const {
         item: orders,
         saveItem: saveOrder,
@@ -60,6 +61,8 @@ const useInitialState = () => {
         removeFromCart,
         onPurchase,
         loadingOrder,
+        productInfoView,
+        setProductInfoView,
     };
 };
 function newOrderID(orderList) {

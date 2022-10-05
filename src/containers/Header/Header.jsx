@@ -24,7 +24,7 @@ function Header() {
     const handleToggleMobileMenu = () => {
         setToggleMobile(!toggleMobile);
     };
-    
+
     return (
         <nav className="navbar">
             <img
@@ -63,7 +63,7 @@ function Header() {
             </div>
             {toggle && <DesktopMenu />}
             {toggleOrders && <ShoppingCart />}
-            {toggleMobile && <MobileMenu />}
+            <MobileMenu toggleMobile={toggleMobile} />
         </nav>
     );
 }

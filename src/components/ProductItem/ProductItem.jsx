@@ -1,25 +1,32 @@
-import React, { useContext } from "react";
-import "./ProductItem.scss";
+import React, { useContext, useState } from "react";
 import AppContext from "../../utils/context/AppContext";
 import iconAddToCart from "@icons/bt_add_to_cart.svg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./ProductItem.scss";
 
 function ProductItem({ product }) {
-    const { state, addToCart } = useContext(AppContext);
+    const navigate = useNavigate();
+    const { addToCart, productInfoView, setProductInfoView } =
+        useContext(AppContext);
 
     const handleClick = (item) => {
+        navigate(`/`);
         addToCart(item);
+        setProductInfoView(false);
     };
-
+    const handleInfo = () => {
+        navigate(`/product/${product.id}`);
+        setProductInfoView(true);
+    };
     return (
         <div className="ProductItem">
-            <Link to={`/product/${product.id}`}>
             <img
+                onClick={handleInfo}
                 src={product.images[0]}
                 alt={product.title}
                 className="ProductItem-img"
-                />
-            </Link>
+            />
+
             <div className="ProductItem-info">
                 <div>
                     <p>${product.price}</p>
