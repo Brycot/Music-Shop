@@ -10,6 +10,7 @@ function ProductDetail() {
     const { productID } = useParams();
     const { productInfoView, setProductInfoView } = useContext(AppContext);
     const product = productsData.find((item) => item.id == productID);
+
     const handleClose = () => {
         setProductInfoView(false);
         setTimeout(() => {
@@ -18,7 +19,7 @@ function ProductDetail() {
     };
 
     return (
-        <div className={`product-detail-container`}>
+        <div className={`product-detail-container`} onClick={handleClose}>
             <section
                 className={`${
                     productInfoView

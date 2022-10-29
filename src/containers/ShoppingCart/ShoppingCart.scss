@@ -11,6 +11,8 @@
     top: 61px;
     right: 0;
     z-index: 3;
+    transform-origin: top;
+    animation: fadeIn 0.25s ease;
 }
 .ShoppingCart-content {
     max-height: 340px;
@@ -86,3 +88,11 @@
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}

@@ -10,6 +10,7 @@ import DesktopMenu from "../DesktopMenu/DesktopMenu";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { Link } from "react-router-dom";
+import HamburguerMenu from "../../components/HamburguerMenu";
 
 function Header() {
     const [toggle, setToggle] = useState(false);
@@ -27,11 +28,15 @@ function Header() {
 
     return (
         <nav className="navbar">
-            <img
+            {/* <img
                 onClick={() => handleToggleMobileMenu()}
                 src={Icon}
                 alt="menu"
                 className="menu"
+            /> */}
+            <HamburguerMenu
+                handleToggleMobileMenu={handleToggleMobileMenu}
+                toggleMobile={toggleMobile}
             />
             <div className="navbar-left">
                 <Link to={"/"} className="nav-logo-navlink">
@@ -63,7 +68,10 @@ function Header() {
             </div>
             {toggle && <DesktopMenu />}
             {toggleOrders && <ShoppingCart />}
-            <MobileMenu toggleMobile={toggleMobile} />
+            <MobileMenu
+                setToggleMobile={setToggleMobile}
+                toggleMobile={toggleMobile}
+            />
         </nav>
     );
 }

@@ -1,0 +1,56 @@
+@use "../../styles/vars";
+
+.HamburguerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: transparent;
+    // gap: 0.40rem;
+}
+.HamburguerMenu > div {
+    background-color: var(--very-light-pink);
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+.HamburguerMenu--active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: transparent;
+    // gap: 0.40rem;
+}
+.HamburguerMenu--active > div {
+    background-color: var(--very-light-pink);
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+.HamburguerMenu--active div:first-child {
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+.HamburguerMenu--active div:nth-child(2) {
+    opacity: 0;
+    transition: all 0.25s;
+}
+.HamburguerMenu--active div:last-child {
+    transform: rotate(-45deg);
+    transition: all 0.5s;
+}
+
+@media (min-width: 1000px) {
+    .HamburguerMenu {
+        display: none;
+    }
+}

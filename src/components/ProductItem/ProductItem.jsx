@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../../utils/context/AppContext";
-import iconAddToCart from "@icons/bt_add_to_cart.svg";
 import { useNavigate } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa";
 import "./ProductItem.scss";
 
 function ProductItem({ product }) {
@@ -32,9 +32,9 @@ function ProductItem({ product }) {
                     <p>${product.price}</p>
                     <p>{product.title}</p>
                 </div>
-                <figure onClick={() => handleClick(product)}>
-                    <img src={iconAddToCart} alt={"add to cart"} />
-                </figure>
+                <div className="IconAddShoppingCart" onClick={() => handleClick(product)}>
+                    <FaCartPlus/>
+                </div>
             </div>
         </div>
     );

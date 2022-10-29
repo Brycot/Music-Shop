@@ -1,9 +1,13 @@
 import React from "react";
-import './MobileMenu.scss';
-import { categories } from '@utils/categories';
+import "./MobileMenu.scss";
+import { categories } from "@utils/categories";
 import NavLink from "../../components/NavLink/NavLink";
+import { Link } from "react-router-dom";
 
-function MobileMenu({ toggleMobile }) {
+function MobileMenu({ toggleMobile, setToggleMobile }) {
+    const handleClick = () => {
+        setToggleMobile(false);
+    };
     return (
         <div className={`${toggleMobile ? "mobile-menu-open" : "mobile-menu"}`}>
             <ul>
@@ -13,10 +17,14 @@ function MobileMenu({ toggleMobile }) {
             </ul>
             <ul>
                 <li>
-                    <a href="/">My orders</a>
+                    <Link to="/orders" onClick={handleClick}>
+                        My orders
+                    </Link>
                 </li>
                 <li>
-                    <a href="/">My Account</a>
+                    <Link to="/account" onClick={handleClick}>
+                        My Account
+                    </Link>
                 </li>
             </ul>
             <ul>

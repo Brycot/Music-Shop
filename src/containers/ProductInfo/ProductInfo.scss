@@ -51,3 +51,29 @@
     font-weight: 500;
     font-size: var(--sm);
 }
+
+@media (min-width: 1000px) {
+    .degradado {
+        position: absolute;
+        width: 35%;
+        height: 360px;
+        left: 81px;
+        background: rgb(12, 12, 13);
+        background: linear-gradient(
+            90deg,
+            rgba(12, 12, 13, 0) 0%,
+            rgba(12, 12, 13, 1) 84%
+        );
+    }
+    .image-product-detail {
+        width: 350px;
+        height: 360px;
+        object-fit: cover;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+    }
+}

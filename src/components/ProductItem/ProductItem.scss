@@ -25,11 +25,9 @@
     width: 35px;
     height: 35px;
     cursor: pointer;
-
 }
 .ProductItem-info div {
     cursor: pointer;
-    
 }
 .ProductItem-info div p:nth-child(1) {
     font-weight: bold;
@@ -44,6 +42,19 @@
     color: var(--very-light-pink);
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.IconAddShoppingCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--backgound);
+    // color: var(--button-color--purchase);
+    min-width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+    background-color: var(--button-color--purchase);
 }
 @media (max-width: 640px) {
     .productItem {
