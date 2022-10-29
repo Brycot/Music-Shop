@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.scss";
 import Icon from "@icons/icon_menu.svg";
-import Logo from "@logos/logo_yard_sale.svg";
+import Logo from "@logos/logo_yard_sale.png";
 import Arrow from "@icons/flechita.svg";
 import IconShoppingCart from "../../components/IconShoppingCart/IconShoppingCart";
 import NavLink from "../../components/NavLink/NavLink";

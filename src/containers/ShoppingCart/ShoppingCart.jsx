@@ -32,7 +32,6 @@ function ShoppingCart() {
     return (
         <aside className="ShoppingCart">
             <div className="title-container">
-                <img src="/assets/img/icons/flechita.svg" alt="arrow" />
                 <p className="tittle">Shopping cart</p>
             </div>
             <div className="ShoppingCart-content">

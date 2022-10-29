@@ -36,6 +36,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--very-light-pink);
+    font-size: 1.2rem;
+}
+.icon-close svg {
+    transform: rotate(-45deg);
 }
 .product-detail-close {
     width: 44px;

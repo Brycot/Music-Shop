@@ -18,7 +18,7 @@ const useInitialState = () => {
         loading,
         error,
     } = useLocalStorage("ShoppingCart", []);
-    
+
     const deleteTodo = (id) => {
         const todoIndex = todos.findIndex((todo) => todo.id === id);
         const newTodos = [...todos];
@@ -33,7 +33,7 @@ const useInitialState = () => {
     };
     const removeFromCart = (indexValue) => {
         const productIndex = ShoppingCart.findIndex(
-            (product) => product.id === indexValue
+            (product) => product === ShoppingCart[indexValue]
         );
         const newCart = [...ShoppingCart];
         newCart.splice(productIndex, 1);

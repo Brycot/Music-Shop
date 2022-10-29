@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import ProductInfo from "../../containers/ProductInfo/ProductInfo";
 import productsData from "../../utils/products";
 import AppContext from "../../utils/context/AppContext";
+import { FaPlus } from "react-icons/fa";
 import "./ProductDetail.scss";
 
 function ProductDetail() {
@@ -29,10 +30,7 @@ function ProductDetail() {
             >
                 <div className="product-detail-close">
                     <div onClick={handleClose} className="icon-close">
-                        <img
-                            src="/assets/img/icons/icon_close.png"
-                            alt="close"
-                        />
+                        <FaPlus />
                     </div>
                 </div>
                 <ProductInfo product={product} />
