@@ -58,11 +58,12 @@
 @media (max-width: 640px) {
     .product-detail-container {
         background-color: transparent;
+        position: fixed;
     }
     .product-detail {
         flex-direction: column;
         width: 100%;
-        height: 93vh;
+        height: 94vh;
         border-radius: 0px;
         transform-origin: bottom;
         transform: translateY(100%);
