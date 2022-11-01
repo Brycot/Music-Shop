@@ -83,6 +83,11 @@
 }
 
 @media (min-width: 641px) and (max-width: 1000px) {
+    .product-detail-container {
+        height: 94vh;
+        position: fixed;
+        top: 60px;
+    }
     .product-detail-complete {
         flex-direction: column;
         width: 90%;
