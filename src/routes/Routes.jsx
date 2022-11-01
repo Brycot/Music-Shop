@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import NewPassWord from "@views/NewPassword/NewPassword";
 import RecoveryPassword from "@views/RecoveryPassword/RecoveryPassword";
@@ -21,7 +21,7 @@ function RoutesMusic() {
     const initialState = useInitialState();
     return (
         <AppContext.Provider value={initialState}>
-            <BrowserRouter>
+            <HashRouter>
                 <Routes>
                     <Route exact path="/" element={<Home />}>
                         <Route
@@ -56,7 +56,7 @@ function RoutesMusic() {
 
                     <Route exact path="*" element={<NotFound />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </AppContext.Provider>
     );
 }
