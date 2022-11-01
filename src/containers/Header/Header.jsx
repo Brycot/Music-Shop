@@ -8,7 +8,7 @@ import { categories } from "@utils/categories";
 import DesktopMenu from "../DesktopMenu/DesktopMenu";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import HamburguerMenu from "../../components/HamburguerMenu";
 
 function Header({ setFilterValue }) {

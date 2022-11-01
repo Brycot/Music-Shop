@@ -11,7 +11,7 @@
     top: 61px;
     left: 0px;
     background-color: var(--background);
-    z-index: 2;
+    z-index: 999;
     transform: scaleX(0);
     transition: all 0.2s ease-out;
     transform-origin: left;
@@ -63,7 +63,7 @@
     top: 61px;
     left: 0px;
     background-color: var(--background);
-    z-index: 2;
+    z-index: 999;
     transform: scaleX(1);
     transition: all 0.2s ease-out;
     transform-origin: left;

@@ -5,8 +5,8 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "bundle.js", // cambiar a bundle.js
-        publicPath: "./", // cambiar a ./
+        filename: "src/index.js", // cambiar a bundle.js
+        publicPath: "/", // cambiar a ./
     },
     mode: "development",
     resolve: {

@@ -2,11 +2,13 @@ import React from "react";
 import "./MobileMenu.scss";
 import { categories } from "@utils/categories";
 import NavLink from "../../components/NavLink/NavLink";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function MobileMenu({ toggleMobile, setToggleMobile, setFilterValue }) {
+    const navitate = useNavigate();
     const handleClick = () => {
         setToggleMobile(false);
+        navitate('/');
     };
     return (
         <div className={`${toggleMobile ? "mobile-menu-open" : "mobile-menu"}`}>

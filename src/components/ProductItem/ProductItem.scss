@@ -4,12 +4,17 @@
     // width: 240px;
     animation: fadeIn 0.5s ease;
 }
+.ProductItem:hover .ProductItem-img {
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
 .ProductItem-img {
     width: 240px;
     height: 240px;
     border-radius: 20px;
     object-fit: cover;
     cursor: pointer;
+    transition: all 0.5s;
 }
 
 .ProductItem-info {

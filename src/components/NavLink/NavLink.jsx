@@ -1,13 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useGetProducts from "../../utils/hooks/useGetProducts";
 import './NavLink.scss';
 
 function NavLink({ Text, setFilterValue }) {
-
+    const navigate = useNavigate();
+    const handleFilter = (filter) => {
+        setFilterValue(filter);
+        navigate('/');
+    }
 
     return (
         <li
-            onClick={() => setFilterValue(Text.toLowerCase())}
+            onClick={() => handleFilter(Text.toLowerCase())}
             className="NavLink"
         >
             <p>{Text}</p>
