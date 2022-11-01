@@ -4,15 +4,19 @@ import { categories } from "@utils/categories";
 import NavLink from "../../components/NavLink/NavLink";
 import { Link } from "react-router-dom";
 
-function MobileMenu({ toggleMobile, setToggleMobile }) {
+function MobileMenu({ toggleMobile, setToggleMobile, setFilterValue }) {
     const handleClick = () => {
         setToggleMobile(false);
     };
     return (
         <div className={`${toggleMobile ? "mobile-menu-open" : "mobile-menu"}`}>
-            <ul>
+            <ul onClick={handleClick}>
                 {categories.map((category) => (
-                    <NavLink key={category.text} Text={category.text} />
+                    <NavLink
+                        key={category.text}
+                        Text={category.text}
+                        setFilterValue={setFilterValue}
+                    />
                 ))}
             </ul>
             <ul>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DesktopMenu.scss";
 
 function DesktopMenu() {
@@ -6,15 +7,15 @@ function DesktopMenu() {
         <div className="desktop-menu">
             <ul className="desktop-menu__ul">
                 <li>
-                    <a href="/" className="title">
+                    <Link to="/orders" className="title">
                         My orders
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/">My account</a>
+                    <Link to="/account">My account</Link>
                 </li>
                 <li>
-                    <a href="/">Sing out</a>
+                    <Link to="/">Sing out</Link>
                 </li>
             </ul>
         </div>

@@ -1,26 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import productsData from "../products";
 
 const useGetProducts = () => {
+    const [products, setProducts] = useState(productsData);
     const [filterValue, setFilterValue] = useState("all");
-    const [products, setProducts] = useState([]);
 
     let productsFiltered = [];
-    useEffect(() => {
+    
         if (filterValue === "all") {
-            setProducts(productsData);
+            productsFiltered = [...products];
         } else {
-            productsFiltered = productsData.filter(
+            productsFiltered = products.filter(
                 (product) => product.category === filterValue
             );
-            console.log(productsFiltered);
-            setProducts(productsFiltered);
         }
-    }, [filterValue]);
-
     return {
-        products,
+        productsFiltered,
         setFilterValue,
+        filterValue,
     };
 };
 

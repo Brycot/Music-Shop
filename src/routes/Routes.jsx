@@ -1,7 +1,6 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter , Routes, Route } from "react-router-dom";
 
-import Layout from "@containers/Layout";
 import NewPassWord from "@views/NewPassword/NewPassword";
 import RecoveryPassword from "@views/RecoveryPassword/RecoveryPassword";
 import Home from "@views/Home/Home";
@@ -20,59 +19,44 @@ import useInitialState from "../utils/hooks/useInitialState";
 
 function RoutesMusic() {
     const initialState = useInitialState();
-
     return (
         <AppContext.Provider value={initialState}>
-            <HashRouter>
-                <Layout>
-                    <Routes>
-                        <Route exact path="/" element={<Home />}>
-                            <Route
-                                exact
-                                path="/product/:productID"
-                                element={<ProductDetail />}
-                            />
-                        </Route>
-
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<Home />}>
                         <Route
                             exact
-                            path="/new-password"
-                            element={<NewPassWord />}
+                            path="/product/:productID"
+                            element={<ProductDetail />}
                         />
-                        <Route
-                            exact
-                            path="/recovery-password"
-                            element={<RecoveryPassword />}
-                        />
-                        <Route
-                            exact
-                            path="/email-send"
-                            element={<EmailSend />}
-                        />
-                        <Route exact path="/login" element={<Login />} />
+                        <Route exact path="/orders" element={<Orders />} />
+                        <Route exact path="/orders/:code" element={<Order />} />
                         <Route exact path="/account" element={<MyAccount />} />
                         <Route
                             exact
                             path="/edit-account"
                             element={<EditAccount />}
                         />
-                        <Route
-                            exact
-                            path="/singup"
-                            element={<CreateAccount />}
-                        />
-                        <Route exact path="/orders" element={<Orders />} />
-                        <Route exact path="/orders/:code" element={<Order />} />
-                        <Route
-                            exact
-                            path="/shopping-cart"
-                            element={<ShoppingCart />}
-                        />
+                    </Route>
 
-                        <Route exact path="*" element={<NotFound />} />
-                    </Routes>
-                </Layout>
-            </HashRouter>
+                    <Route
+                        exact
+                        path="/new-password"
+                        element={<NewPassWord />}
+                    />
+                    <Route
+                        exact
+                        path="/recovery-password"
+                        element={<RecoveryPassword />}
+                    />
+                    <Route exact path="/email-send" element={<EmailSend />} />
+                    <Route exact path="/login" element={<Login />} />
+
+                    <Route exact path="/singup" element={<CreateAccount />} />
+
+                    <Route exact path="*" element={<NotFound />} />
+                </Routes>
+            </BrowserRouter>
         </AppContext.Provider>
     );
 }

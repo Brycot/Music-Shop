@@ -5,7 +5,7 @@ productsData.push({
     price: 120,
     info: "Apollo Solo is the world’s finest Thunderbolt 3-powered desktop recording audio interface for Mac and Windows — delivering class‑leading audio conversion, two Unison™ mic preamps, and a suite of onboard UAD plug-ins for recording album‑quality results, in real time.",
     images: ["https://media.uaudio.com/assetlibrary/a/p/apollo_solo_og.jpg"],
-    category: "interface",
+    category: "interfaces",
 });
 productsData.push({
     id: "2",
@@ -27,4 +27,5 @@ productsData.push({
     ],
     category: "headphones",
 });
+
 export default productsData;

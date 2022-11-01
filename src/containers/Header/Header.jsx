@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Header.scss";
-import Icon from "@icons/icon_menu.svg";
 import Logo from "@logos/logo_yard_sale.png";
 import Arrow from "@icons/flechita.svg";
 import IconShoppingCart from "../../components/IconShoppingCart/IconShoppingCart";
@@ -12,7 +11,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { Link } from "react-router-dom";
 import HamburguerMenu from "../../components/HamburguerMenu";
 
-function Header() {
+function Header({ setFilterValue }) {
     const [toggle, setToggle] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
     const [toggleMobile, setToggleMobile] = useState(false);
@@ -44,7 +43,11 @@ function Header() {
                 </Link>
                 <ul>
                     {categories.map((category) => (
-                        <NavLink key={category.text} Text={category.text} />
+                        <NavLink
+                            key={category.text}
+                            Text={category.text}
+                            setFilterValue={setFilterValue}
+                        />
                     ))}
                 </ul>
             </div>
@@ -52,11 +55,7 @@ function Header() {
                 <ul>
                     <li className="navbar-email" onClick={handleToggle}>
                         pepe@example.com
-                        <img
-                            onClick={() => console.log("feewf")}
-                            src={Arrow}
-                            alt="flecha"
-                        />
+                        <img src={Arrow} alt="flecha" />
                     </li>
                     <li
                         className="navbar-shopping-car"
@@ -71,6 +70,7 @@ function Header() {
             <MobileMenu
                 setToggleMobile={setToggleMobile}
                 toggleMobile={toggleMobile}
+                setFilterValue={setFilterValue}
             />
         </nav>
     );

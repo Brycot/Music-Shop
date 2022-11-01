@@ -6,6 +6,9 @@ import AppContext from "../../utils/context/AppContext";
 import "./ShoppingCart.scss";
 import ThanksView from "../../components/ThanksView/ThanksView";
 
+
+
+
 function ShoppingCart() {
     const navigate = useNavigate();
     const { ShoppingCart, onPurchase } = useContext(AppContext);
@@ -28,7 +31,6 @@ function ShoppingCart() {
         setPurchased(false);
         }, 3000);
     };
-    
     return (
         <aside className="ShoppingCart">
             <div className="title-container">

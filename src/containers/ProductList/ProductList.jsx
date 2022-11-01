@@ -1,14 +1,12 @@
 import React from "react";
 import ProductItem from "@components/ProductItem/ProductItem";
 import "./ProductList.scss";
-import useGetProducts from "../../utils/hooks/useGetProducts";
 
-function ProductList() {
-    const {products} = useGetProducts();
+function ProductList({ productsFiltered }) {
     return (
         <section className="main-container">
             <div className="productList">
-                {products.map((product) => (
+                {productsFiltered.map((product) => (
                     <ProductItem key={product.id} product={product} />
                 ))}
             </div>

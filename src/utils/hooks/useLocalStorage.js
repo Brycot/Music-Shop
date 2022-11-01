@@ -6,7 +6,6 @@ function useLocalStorage(itemName, initialValue) {
         initialState({ initialValue })
     );
     const { sincronized, error, loading, item } = state;
-
     // ACTION CREATORS
     const onError = (error) =>
         dispatch({ type: actionTypes.error, payload: error });
@@ -36,7 +35,7 @@ function useLocalStorage(itemName, initialValue) {
                 onError(error);
             }
         }, 1000);
-    }, [sincronized]);
+    }, [sincronized, item]);
 
     const saveItem = (newItem) => {
         try {
