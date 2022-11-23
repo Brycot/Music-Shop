@@ -19,8 +19,8 @@ Eccomerce digital de musica creado usando la libreria de facebook react
 
 ---
 
-![]()
+![](https://i.imgur.com/BteT2rJ.png)
 
 ---
 
-## [Visitar el demo del Proyecto]() 
+## [Visitar el demo del Proyecto](https://brycot.github.io/music-shop/) 
